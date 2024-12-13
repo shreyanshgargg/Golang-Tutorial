@@ -1,0 +1,27 @@
+imagine you have a box full of colorful balls. Every time you reach in, you don't know which color ball you'll pull out—it’s a surprise! A random number is like pulling out a ball from that box without knowing which one it is.
+
+In Go (a type of computer language), we can ask the computer to give us a random number, just like asking it to give us a random ball from the box. But before we ask, we have to make sure the computer knows how to choose a random number, so it doesn’t always pick the same one!
+
+Here’s how we do it:
+
+Get the box ready: First, we tell the computer to get the box ready, so it can pick a random number.
+
+Ask for a number: We then ask the computer to give us a random number, just like pulling out a random ball.
+
+Here’s how you tell the computer to do it in Go:
+
+//code 
+package main 
+
+import "math/rand"
+import "time"
+
+func main() {
+    rand.Seed(time.Now().UnixNano())  // This makes the numbers different every time!
+    randomNum := rand.Intn(10)        // This asks for a random number between 0 and 9
+    fmt.Println(randomNum)            // Show the number you got!
+}
+
+rand.Seed(time.Now().UnixNano()): This is like getting the box ready to give us a different ball each time.
+rand.Intn(10): This asks the computer to pick a number between 0 and 9 (just like picking a ball from the box).
+fmt.Println(randomNum): This shows the ball (number) you got!
